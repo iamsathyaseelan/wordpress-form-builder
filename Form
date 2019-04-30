@@ -24,7 +24,6 @@
  *
  * @filesource
  */
-
 class Form
 {
     const CHARSET = 'utf8';
@@ -66,7 +65,7 @@ class Form
         // Adding the nonce field
         if (!empty($action)) {
             $form .= '<input type="hidden" name="action" value="' . strip_tags($action) . '" />' . "\n";
-            $form .= wp_nonce_field('name_of_my_action', '_wpnonce');
+            $form .= wp_nonce_field($action, '_wpnonce');
         }
         return $form;
     }
